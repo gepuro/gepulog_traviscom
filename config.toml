@@ -10,7 +10,7 @@ pygmentsCodefences = true # ```で囲んだコードをハイライトする設�
 pygmentsUseClasses = true # <span stype="xxxx">で色付けをするのではなく、<span class="className">classで分ける
 
 # Number of posts per page
-Paginate = 20
+Paginate = 40
 enableRobotsTXT = true
 
 [params.info]
