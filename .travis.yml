@@ -7,8 +7,9 @@ env:
 
 notifications:
   slack:
+    on_success: always # default: change
+    on_failure: always # default: always
     secure: "Q1FGKGSWn6evePLQg2NlxSMPN4pBlf+XEO0ur8PtPSFip2RFT6mwQeyjLuZj8OBUqkPiZqhrC6HmdlgnYzouE3z819WW81YokC+v5nqo9T9PMeSS6Yfh8+k7I/HMjmmUqGkxtsMXwYEEoo7wf2Y3293o8guVatlk8mDE67UTriCXuAWWwZjOnTk6G9fwKXR5iqJgyvcETdBYZlXcS/MDRca/WhINFoLtbi/F6fytMDeXFM71ckCJKB5N9Z8if1GN2XIU1sL17ELD1HgDd6iCx44OV344G+4sSqJV8AGtLQDbvTLe5UNw67AfF4dAZ3ys3/4a9vFCk4kWFWFm8h8eekrAz6IJk4WuToGVkD09ObNtO7OGMO9U6RcGzv8DGpDzY6ifXune5ooyLVkzeSLSo/TOiFADP0rbwus8X1G5uBuEyHuS1I+rJgfyZ1hKLkSbwB55L4LD14Dplzp51z2GaeI7twY3MCk0F/fAuqFK0hroF52xTOD6RhbimUMe/iJ7p/JgQD/g2Dwf4RPE8aPx6c5t6f7/oVHUPXfLelEcjSHe91rINTHt6t6p9gHyW3UyrCip9THhT4TU73RoC+u8J8QLqrEWDOkOqT2ch1XoJ4/isEJUXEglSTsiVNKZMdSSLNL03i2VvxzUQw24UurFEBhv0oiBCW5NyrcHKgPUCfk="
-
 install:
   - wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
   - tar zxvf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
