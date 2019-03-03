@@ -9,6 +9,7 @@ notifications:
   slack:
     secure: "nJ5jcwb4yg+MRJFA0NklAwwMz5R+83/aUWA8oIQ8X3rPFdlQtGKwTWPR6tFW8HfvI/eSJnovTkFO6L7vdSIFh/wrgpQ5GOck3qBLD6vntHysbsQzhLNKSBZXzhkp0lFJrqhnHeYpXpKdSulMM2qH02MuPNk/ihvNb9TDYVTVA1ygrogactHuuIch79JjMuHwuh/JGIaqlBzTk/m1KbvqGcttk0z/LOjNdP4ILffnV1vGKV4eMSs6I/hjRJuU+2DhNQJ7djTBOnVlZtn/o/IP7tm7XPtyQY6j6vmYMRiPEbE6XJRA9IC4ffhZGmBVzbxGv6uKtHilRsmeH8yg88GtNjlJW7jthj8DmMisDh8Z4HX2SyP8K91rg2Cod+hzLtIG7oaN93Ftt51rY3Iu8pJ2Iz7lk8jo3ohL7xlVLWfOLvDFZunF9XgzSyOE3FMQbPkNweVVpDTKZYlCHyFgnp7HzgH/4dD0yRkSXd8EllMIHn77m/399Ka/F9SMP2PYuX4hyx/DNgkEWR+mj4Vma7IkO5iG9XspRXxt8D7FbysI/BKXrPDTAgyNDROZqZUOHpxWRjTIg3cdJZWAUEJhNRUVA7O2UAm5pH2YU9iL6bDT6qRJb5WJsRkY+1xy9X5SJRE6Qah8GycQ9w22GGhKABAhmAN69YbEbPFJ0Da8qaJktvw="
 
+
 install:
   - wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
   - tar zxvf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
