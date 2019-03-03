@@ -1,0 +1,28 @@
+language: bash
+
+env:
+    global:
+      - HUGO_VERSION=0.32.1
+      - GIT_URL=https://git@github.com/gepuro/gepulog.git
+
+notifications:
+  slack:
+    secure: "TSEF4UkzYqZfzxxv398nzhmU7nP5OnrC6Sc+MJ7DhiWjSX+s846Msgwj6svzyBfp+FspYo7mXYC4faFgd2zod90g8XD9apmPQ9yBeP8+f2psap7PP3FtHney4OB6nFbFRsxo+Ue9YjXyMj6qycAgQ3pe7+ol8L+ZirxFVlYKoQUoE1nNElVtsVQro2D/j2UVWvV0ZttiSXQcO+AoF7+uEZAvGleGMXXR29u0AB7cLN11ASWhN8k4x5XyoBd7+L57GcgGs4OuBiUO1RB4SmoevdY+e5ozLoaoXUcw/n8TH59In4jz9ziVZ/9lMaItTblQMkKx4i9cDPCqfj0x9aKNhkYRM2uLHdL4zTPHTrwVHP/fW1p1sM+IU97cWH4/1RU9cntnUMewu3WDDNLzaapiK+4gV5d/AAVnaEoLzsXySHUfUT//Zi3h/DdcLLM+LTjfhOhxbfo2Hepnc6BYqYzeY8LSjUfL4TJpgV1wM/clnnOE0x/Gh8SNL2YvTaxzCj+2EZFF5uPPHsyWsIFaMG2+6hsnKNeRNrsSUUx5kARUN+rxfSVCJpp5ddb3x98lIrNvJ/oRSUy4iDR0xuTY+WJM142hqp5QPeQqriU9OjKNBCRU8wrfDLEuQEZTqgVjl+KrZTemBVlhk/f3jfNP2PgSnK6sjhgOhyYmG9I1uZTE+9Y="
+
+install:
+  - wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+  - tar zxvf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+
+before_deploy:
+  - mkdir docs
+  - ./hugo -t kiss-master
+
+# Deploy to GitHub pages
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: docs
+  # github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  fqdn: blog.gepuro.net
+  on:
+    branch: master
