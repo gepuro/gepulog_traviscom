@@ -1,0 +1,52 @@
+baseURL = "http://blog.gepuro.net"
+languageCode = "ja"
+title = "gepulog"
+theme = "kiss-master"
+googleAnalytics = "UA-37803439-1"
+copyright = "&copy; <a href=\"https://github.com/gepuro\">gepuro</a> 2013"
+disqusShortname = ""
+publishdir = "docs"
+pygmentsCodefences = true # ```で囲んだコードをハイライトする設定
+pygmentsUseClasses = true # <span stype="xxxx">で色付けをするのではなく、<span class="className">classで分ける
+
+# Number of posts per page
+Paginate = 20
+enableRobotsTXT = true
+
+[params.info]
+adsense = "" # Adsense ID (ID only, without ca-pub-)
+enableSocial = false # Adds OpenGraph and Twitter cards
+homeTitle = "gepulog" # Title for home page
+poweredby = false # Adds powered by hugo and kiss below Copyright
+RSS = true
+
+[params.opengraph.facebook]
+admins = [] # array of Facebook IDs
+appID = ""
+pageID = ""
+
+
+[params.social]
+
+twitter = "gepuro"
+github = "gepuro"
+email = ""
+linkedin = ""
+facebook = "atsushi.hayakawa.0715"
+instagram = ""
+codepen = ""
+slideshare = "gepuro"
+
+[taxonomies]
+tag ="tags"
+
+[blackfriday]
+hrefTargetBlank = true
+
+[outputs]
+home = ["RSS", "HTML"]
+
+[outputFormats]
+[outputFormats.RSS]
+mediatype = "application/rss"
+baseName = "feed"

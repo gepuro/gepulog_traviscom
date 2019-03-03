@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Theme on Hugo Theme One</title>
+    <link>https://resugary.github.io/hugo-theme-one/tags/theme/</link>
+    <description>Recent content in Theme on Hugo Theme One</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Dec 2017 04:22:12 +0800</lastBuildDate>
+    
+        <atom:link href="https://resugary.github.io/hugo-theme-one/tags/theme/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo Theme One</title>
+      <link>https://resugary.github.io/hugo-theme-one/posts/hugo-theme-one/</link>
+      <pubDate>Wed, 20 Dec 2017 04:22:12 +0800</pubDate>
+      
+      <guid>https://resugary.github.io/hugo-theme-one/posts/hugo-theme-one/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/resugary/hugo-theme-one&#34;&gt;One&lt;/a&gt; is a minimal blog theme for Hugo, which is forked from &lt;a href=&#34;https://github.com/schollz/onetwothree&#34;&gt;onetwothree&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;differences-from-original-onetwothree&#34;&gt;Differences from original onetwothree&lt;/h2&gt;
+
+&lt;p&gt;It provides some new features and simplifications. I tried to keep it minimal with less configuration to write a blog rather than play with a theme instead.&lt;/p&gt;
+
+&lt;p&gt;Features:&lt;br /&gt;
+- Add archives support for all posts in a single page&lt;br /&gt;
+- Homepage displayed with 7 latest posts default instead of the whole
+- Sytax highlighting with &lt;code&gt;highlight.js&lt;/code&gt;&lt;br /&gt;
+- Google Analytics support&lt;br /&gt;
+- Full-text RSS support&lt;/p&gt;
+
+&lt;p&gt;Some simplifications:
+- Fix critical bugs such as relative URL managent etc
+- Remove the style &amp;ldquo;2&amp;rdquo; and &amp;ldquo;3&amp;rdquo; in adittion&lt;br /&gt;
+- Remove PREVIOUS and NEXT links at bottom of posts&lt;br /&gt;
+- Remove twitter components integrated
+- Remove round edges style of images&lt;br /&gt;
+- Remove tags displayed following each titles at homepage&lt;br /&gt;
+- Change preformatted style of hyperlinks, code block and blockquote&lt;br /&gt;
+- Change posts location to &lt;code&gt;content/posts&lt;/code&gt; as hugo Quick Start&lt;/p&gt;
+
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;Clone this repository to your hugo theme directory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/resugary/hugo-theme-one.git themes/one
+hugo server -t=one
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;create-new-posts&#34;&gt;Create New Posts&lt;/h2&gt;
+
+&lt;p&gt;Posts should generally go under a &lt;code&gt;content/posts&lt;/code&gt; directory, you may start like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo new posts/hello.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;create-a-fixed-page&#34;&gt;Create a fixed Page&lt;/h2&gt;
+
+&lt;p&gt;Fixed pages such as an About page should be present at the root of the &lt;code&gt;content&lt;/code&gt; directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo new about.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To enable Archives, you should create a new file called &lt;code&gt;archives.md&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo new archives.md
+
+# then add the following line in the front matter
+type: &amp;quot;archives&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;configuration&#34;&gt;Configuration&lt;/h2&gt;
+
+&lt;p&gt;Copy the &lt;code&gt;config.toml&lt;/code&gt; in the root director of your hugo site.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;baseURL = &amp;quot;https://example.com&amp;quot;
+languageCode = &amp;quot;en-us&amp;quot;
+title = &amp;quot;My Hugo Site&amp;quot;
+
+theme = &amp;quot;one&amp;quot;
+googleAnalytics = &amp;quot;UA-123-45&amp;quot;
+
+[params]
+    navigation = [&amp;quot;archives.md&amp;quot;, &amp;quot;about.md&amp;quot;]
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Feel free to change the strings in this theme.&lt;/p&gt;
+
+&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
+
+&lt;p&gt;Licensed under the MIT License.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
