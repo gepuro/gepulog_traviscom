@@ -2,7 +2,7 @@
 title: デザイン変更
 date: 2013-01-25T12:14:52+09:00
 draft: false
-tags: [product]
+tags: [Product]
 aliases:
     - /archives/6
 ---

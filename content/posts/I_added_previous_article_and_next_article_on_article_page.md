@@ -2,7 +2,7 @@
 title: 記事ページに「前の記事」「次の記事」を追加した
 date: 2014-11-26T20:56:46+09:00
 draft: false
-tags: [product]
+tags: [Product]
 aliases:
     - /archives/101
 ---

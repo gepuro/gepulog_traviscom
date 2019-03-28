@@ -2,7 +2,7 @@
 title: Atom フィード形式に対応しました
 date: 2014-03-25T19:00:44+09:00
 draft: false
-tags: [product, Python]
+tags: [Product, Python]
 aliases:
     - /archives/82
 ---

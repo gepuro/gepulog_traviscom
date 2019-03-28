@@ -2,7 +2,7 @@
 title: タイトルの表示方法を変更した
 date: 2013-10-16T19:09:26+09:00
 draft: false
-tags: [product]
+tags: [Product]
 aliases:
     - /archives/68
 ---
