@@ -7,6 +7,5 @@ draft: False
 <script>
   var redirect_url = "http://google.com" + location.search;
   location.href = redirect_url;
-}
 </script>
 
