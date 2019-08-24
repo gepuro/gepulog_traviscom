@@ -5,7 +5,13 @@ draft: False
 ---
 
 <script>
-  var redirect_url = "http://google.com" + location.search;
-  location.href = redirect_url;
+var flg=true;
+setTimeout("redirect()", 1000);
+function redirect(){
+  if(flg){
+    flg=false;
+    location.href='http://www.yahoo.co.jp/';
+  }
+}
 </script>
 
