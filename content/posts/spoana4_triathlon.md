@@ -1,13 +1,15 @@
 ---
-title: トライアスロンで好タイムの出やすい大会はあるのだろうか？
-date: 2019-08-24T13:10:50+09:00
-draft: false
-tags: [データ分析, spoana]
+date: 2019-08-24T13:01:16+09:00
+title: "トライアスロンで好タイムの出やすい大会はあるのか？"
+draft: True
 ---
+{{% jupyter_cell_start markdown %}}
 
 
-# 好タイムの出やすい大会はあるのか？
-練習をせずに自己ベストを出したい！
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 
 # トライアスロン
@@ -19,25 +21,37 @@ tags: [データ分析, spoana]
   - スイム:1.5km, バイク:40km, ラン:10km
 - アイアンマン・ディスタンス
 
-<div class="column-left">
-    <p>- 日本中で頻繁に大会が実施されている</p>
-    <p>- ガチから子供向けまで</p>
-</div>
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
 
-<div class="column-right">
-    <img src="competitoins.png" width=100%>
-</div>
+<ul>
+<li>日本中で頻繁に大会が実施されている</li>
+<li>ガチから子供向けまで</li>
+</ul>
+
+<img src="competitoins.png" width=100%>
 
 http://japantriathlon.net/race/
+
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
 
 # 大会記録は公開されている
 <img src="results.png" width="100%">
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 import pandas as pd
 ```
 
+{{% jupyter_input_end %}}
+
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 ishigaki = pd.read_excel("triathlon.xlsx", sheet_name="石垣島トライアスロン２０１９")
@@ -51,16 +65,28 @@ izu = pd.read_excel("triathlon.xlsx", sheet_name="第31回伊豆大島トライ�
 kuzyukuri = pd.read_excel("triathlon.xlsx", sheet_name="九十九里トライアスロン2018")
 ```
 
+{{% jupyter_input_end %}}
+
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
+
 # 分析対象の大会
 
 石垣島トライアスロン2019, 2019びわ湖トライアスロンin近江八幡, 第14回銚子マリーナトライアスロン大会, 第13回手賀沼トライアスロン大会公式記録, 第4回鳥取砂丘トライアスロン大会, 木更津トライアスロン2018, 第10回館山わかしおトライアスロン, 第31回伊豆大島トライアスロン大会, 九十九里トライアスロン2018
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
+
 # サンプルデータ
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 ishigaki.head()
 ```
+
+{{% jupyter_input_end %}}
 
 
 
@@ -203,10 +229,16 @@ ishigaki.head()
 
 
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 choshi.age_category.unique()
 ```
+
+{{% jupyter_input_end %}}
 
 
 
@@ -218,10 +250,16 @@ choshi.age_category.unique()
 
 
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
+
 # 前処理
 
 - hh:mm:ss で記録されているタイムを"分"に変換
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 def record_to_minutes(record):
@@ -271,6 +309,12 @@ def age_category_to_age(record):
     return None
 ```
 
+{{% jupyter_input_end %}}
+
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 ishigaki["general_records_minutes"] = ishigaki.general_records.apply(record_to_minutes)
@@ -330,6 +374,12 @@ kuzyukuri["run_records_minutes"] = kuzyukuri.run_records.apply(record_to_minutes
 kuzyukuri["competition"] = "kuzyukuri"
 ```
 
+{{% jupyter_input_end %}}
+
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 import plotly
@@ -338,6 +388,8 @@ plotly.offline.init_notebook_mode()
 
 # import chart_studio.plotly as py
 ```
+
+{{% jupyter_input_end %}}
 
 
         <script type="text/javascript">
@@ -362,6 +414,10 @@ plotly.offline.init_notebook_mode()
 
 
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 # from IPython.core.display import display, HTML
@@ -369,8 +425,16 @@ plotly.offline.init_notebook_mode()
 # display(HTML("<style>.scroll_box { height:1000em  !important; }</style>"))
 ```
 
+{{% jupyter_input_end %}}
+
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
+
 # 総合記録をヒストグラム(石垣)
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 plotly_data = [plotly.graph_objs.Histogram(x=ishigaki.general_records_minutes)]
@@ -378,6 +442,8 @@ layout = plotly.graph_objs.Layout(width=800, height=400, margin=dict(l=20, r=20,
 fig = plotly.graph_objs.Figure(data=plotly_data, layout=layout)
 plotly.offline.iplot(fig, filename='basic histogram')
 ```
+
+{{% jupyter_input_end %}}
 
 
 <div>
@@ -425,8 +491,14 @@ if (outputEl) {{
         </div>
 
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
+
 # 総合記録の比較
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 plotly_data = [
@@ -441,6 +513,8 @@ layout = plotly.graph_objs.Layout(width=800, height=400,
 fig = plotly.graph_objs.Figure(data=plotly_data, layout=layout)
 plotly.offline.iplot(fig)
 ```
+
+{{% jupyter_input_end %}}
 
 
 <div>
@@ -488,6 +562,8 @@ if (outputEl) {{
         </div>
 
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
+
 https://twitter.com/teeeeeeoo/status/1033855647933063168?s=20
 
 ```
@@ -498,6 +574,8 @@ https://twitter.com/teeeeeeoo/status/1033855647933063168?s=20
 膨張からのパンクリスクに備え空気圧減らしてたけど、結構バイクトラブル見受けられたので正解だったかも。
 ```
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
+
 メジアンで比較すると、九十九里が一番遅くて、手賀沼が一番はやい
 九十九里は初心者が多いと言われている。
 石垣もエンジョイが多い？
@@ -506,6 +584,8 @@ https://twitter.com/teeeeeeoo/status/1033855647933063168?s=20
 
 他はあまり変わらない
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
+
 # ~~好タイムの出やすい大会はあるのか？~~
 
 ↓
@@ -513,11 +593,17 @@ https://twitter.com/teeeeeeoo/status/1033855647933063168?s=20
 # 練習する必要がある
 
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 df = pd.concat([ishigaki, biwako, choshi, teganuma, sakyu, kisarazu, tateyama, izu, kuzyukuri], sort=False)
 df.shape
 ```
+
+{{% jupyter_input_end %}}
 
 
 
@@ -526,10 +612,16 @@ df.shape
 
 
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 df.loc[:,["competition", "general_records_minutes"]].groupby(["competition"]).describe()
 ```
+
+{{% jupyter_input_end %}}
 
 
 
@@ -687,10 +779,18 @@ df.loc[:,["competition", "general_records_minutes"]].groupby(["competition"]).de
 
 
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
+
 # それぞれの種目で比較
+
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
 
 # スイム
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 plotly_data = [
@@ -704,6 +804,8 @@ layout = plotly.graph_objs.Layout(width=800, height=400, margin=dict(l=20, r=20,
 fig = plotly.graph_objs.Figure(data=plotly_data, layout=layout)
 plotly.offline.iplot(fig, filename='basic boxplot')
 ```
+
+{{% jupyter_input_end %}}
 
 
 <div>
@@ -751,8 +853,14 @@ if (outputEl) {{
         </div>
 
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
+
 # バイク
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 plotly_data = [
@@ -766,6 +874,8 @@ layout = plotly.graph_objs.Layout(width=800, height=400, margin=dict(l=20, r=20,
 fig = plotly.graph_objs.Figure(data=plotly_data, layout=layout)
 plotly.offline.iplot(fig, filename='basic boxplot')
 ```
+
+{{% jupyter_input_end %}}
 
 
 <div>
@@ -813,8 +923,14 @@ if (outputEl) {{
         </div>
 
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
+
 # ラン
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 plotly_data = [
@@ -828,6 +944,8 @@ layout = plotly.graph_objs.Layout(width=800, height=400, margin=dict(l=20, r=20,
 fig = plotly.graph_objs.Figure(data=plotly_data, layout=layout)
 plotly.offline.iplot(fig, filename='basic boxplot')
 ```
+
+{{% jupyter_input_end %}}
 
 
 <div>
@@ -875,15 +993,23 @@ if (outputEl) {{
         </div>
 
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
+
 # 大会毎に差が出やすい種目は何か
 
 - 全大会のメジアン比で比較する
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 df = df.query("competition != 'kisarazu'")  # 以降では、競技時間が短縮された木更津は除外する
 df.shape
 ```
+
+{{% jupyter_input_end %}}
 
 
 
@@ -892,6 +1018,10 @@ df.shape
 
 
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 swim_records_minutes_median = df["swim_records_minutes"].median()
@@ -907,10 +1037,18 @@ df_run_rate = df.loc[:,["competition", "run_records_minutes"]].groupby(["competi
 df_run_rate = df_run_rate.reset_index()
 ```
 
+{{% jupyter_input_end %}}
+
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 df_swim_rate.merge(df_bike_rate).merge(df_run_rate)
 ```
+
+{{% jupyter_input_end %}}
 
 
 
@@ -1002,8 +1140,14 @@ df_swim_rate.merge(df_bike_rate).merge(df_run_rate)
 
 
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
+
 - 見通しが良くないので、2種目ずつ可視化して考察する
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 df_swim = df.loc[:,["competition", "swim_records_minutes"]].groupby(["competition"]).median()
@@ -1019,18 +1163,38 @@ df_general = df.loc[:,["competition", "general_records_minutes"]].groupby(["comp
 df_general = df_general.reset_index()
 ```
 
+{{% jupyter_input_end %}}
+
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 df_median = df_swim.merge(df_bike).merge(df_run).merge(df_general)
 ```
 
+{{% jupyter_input_end %}}
+
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 import plotly.graph_objects
 ```
 
+{{% jupyter_input_end %}}
+
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
+
 # ラン x バイク
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 import plotly.express as px
@@ -1039,6 +1203,8 @@ fig = px.scatter(df_median, x="run_records_minutes", y="bike_records_minutes", c
 layout = plotly.graph_objs.Layout(width=800, height=400, margin=dict(l=20, r=20, t=20, b=20))
 plotly.offline.iplot(fig, filename='basic boxplot')
 ```
+
+{{% jupyter_input_end %}}
 
 
 <div>
@@ -1086,14 +1252,22 @@ if (outputEl) {{
         </div>
 
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
+
 - 九十九里: ランはそこそこだけど、バイクが遅い
   - 課金不足?
 - 石垣: ランが遅くなるけどバイクは早くなる
   - お金はあるけど、体力不足?
 - 手賀沼, びわ湖: ガチ
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
+
 # ラン x スイム
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start code %}}
+
+
+{{% jupyter_input_start %}}
 
 ```python
 import plotly.express as px
@@ -1101,6 +1275,8 @@ fig = px.scatter(df_median, x="run_records_minutes", y="swim_records_minutes", c
                  size='general_records_minutes')
 fig.show()
 ```
+
+{{% jupyter_input_end %}}
 
 
 <div>
@@ -1148,12 +1324,18 @@ if (outputEl) {{
         </div>
 
 
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
+
 - 九十九里: 相変わらずのゆっくりスイム
 - 伊豆、砂丘はスイマーが多い？
 - 手賀沼、びわ湖: バイクに頼っていてスイムは遅め
+
+{{% jupyter_cell_end %}}{{% jupyter_cell_start markdown %}}
 
 # まとめ
 
 - 天候によって影響を大きく受ける競技なので、経年で比較したくなった
 - 自転車に課金できないエンジョイ勢は九十九里が向いてそう
 - いつか石垣トライアスロンに参加してみたい
+
+{{% jupyter_cell_end %}}
