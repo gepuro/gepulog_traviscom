@@ -6,6 +6,6 @@ tags: [データ分析]
 ---
 
 
-github pagesにて資料を公開しました。
+github pagesにて資料を公開しました!
 
 [好タイムの出やすい大会はあるのか？](https://gepuro.github.io/my_jupyter_notebook/spoana4/triathlon.html)
