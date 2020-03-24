@@ -5,6 +5,7 @@ draft: false
 tags: [勉強会]
 ---
 
-    <iframe src="https://drive.google.com/file/d/1hLUPqXoeyg__zQWksmgjI94_pJPkDDpO/preview" width="100%"
-        height="1000"></iframe>
+<a href="https://drive.google.com/open?id=1hLUPqXoeyg__zQWksmgjI94_pJPkDDpO">資料へのリンク</a>
+<br>
+<iframe src="https://drive.google.com/file/d/1hLUPqXoeyg__zQWksmgjI94_pJPkDDpO/preview" width="100%" height="1000"></iframe>
 
