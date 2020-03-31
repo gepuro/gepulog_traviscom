@@ -24,14 +24,17 @@ Pythonの環境構築で流行りのツール。venvやpipenvと経由して、P
 $ brew update
 $ brew install pyenv
 
-$ cat << 'EOS' >> ~/.bash_profile
-# pyenvに~/.pyenvではなく、/usr/loca/var/pyenvを使うようにお願いする
+$ ~/.bash_profile もしくは ~/.bashrc に以下を追加
+export PYENV_ROOT=$HOME/.pyenv
+もしくは
 export PYENV_ROOT=/usr/local/var/pyenv
+
+export PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init -)"
+export PATH=$HOME/.poetry/bin:$HOME/.local/bin:$PATH
 
 # pyenvに自動補完機能を提供してもらう
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-EOS
 
 $ source ~/.bash_profile
 
