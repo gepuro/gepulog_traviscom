@@ -1,5 +1,5 @@
 ---
-title: sslでbasic認証付きなサイトをサクっと作る方法
+title: SSLでBasic認証付きなサイトをサクっと作る方法
 date: 2020-05-09T23:00:00+09:00
 draft: false
 tags: [Python]
