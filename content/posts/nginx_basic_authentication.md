@@ -35,8 +35,8 @@ services:
     volumes:
       - ./conf.d/server.conf:/etc/nginx/conf.d/server.conf
       - ./conf.d/.htpasswd:/etc/nginx/.htpasswd
-    ports:
-      - "80:80"
+    # ports:
+    #   - "80:80"
 ```
 
 ## nginxの設定ファイル server.conf
