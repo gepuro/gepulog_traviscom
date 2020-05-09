@@ -61,7 +61,7 @@ server {
 
 ## .htpasswdを生成
 ```
-$ sudo htpasswd -c /etc/nginx/.htpasswd username
+$ sudo htpasswd -c ./conf.d/.htpasswd username
 ```
 
 ## 起動
