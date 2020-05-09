@@ -59,6 +59,11 @@ server {
 }
 ```
 
+## .htpasswdを生成
+```
+$ sudo htpasswd -c /etc/nginx/.htpasswd username
+```
+
 ## 起動
 docker-composeして終わり
 ```
