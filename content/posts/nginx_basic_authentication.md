@@ -2,12 +2,12 @@
 title: SSLでBasic認証付きなサイトをサクっと作る方法
 date: 2020-05-09T23:00:00+09:00
 draft: false
-tags: [Python]
+tags: [Docker, Nginx, SSL, Basic認証]
 ---
 
 docker-compose内で http://hoge:3000/ にてサービスが立ち上がっていることを前提に書いています。
 
-## nginx, https-portal: docker-compose.yml
+## Nginx, https-portal: docker-compose.yml
 おなじみのnginxと、https-portal( https://github.com/SteveLTN/https-portal ) という　Let's Encryptを簡単に使えるようにdocker化されたイメージを使う。
 
 ```
