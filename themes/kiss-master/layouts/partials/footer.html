@@ -2,18 +2,21 @@
   <div class="container has-text-centered">
     <p>{{ .Site.Copyright | safeHTML }}</p>
     {{if .Site.Params.Info.poweredby}}
-      <p>Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/ribice/kiss">Kiss</a>.</p>
+    <p>Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/ribice/kiss">Kiss</a>.</p>
     {{ end }}
-  <ul>
-    <li>Icon of Slideshare from <a href="https://www.shareicon.net/photo-social-social-media-photography-social-network-slideshare-644700"> here </a> </li>
-  </ul>
+    <p>
+      Slideshare Icon from <a
+        href="https://www.shareicon.net/photo-social-social-media-photography-social-network-slideshare-644700"> here
+      </a>,
+      Home Icon from <a href="https://icons8.jp/"> icons8 </a>
+    </p>
   </div>
 </section>
 {{ if .Site.GoogleAnalytics }}
 {{ template "_internal/google_analytics_async.html" . }}
 {{ end }}
 
- 
+
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: {
@@ -27,8 +30,10 @@
     }
   });
 </script>
-  
-<script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS_HTML" defer> </script>
+
+<script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS_HTML"
+  defer> </script>
 
 </body>
+
 </html>

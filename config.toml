@@ -18,7 +18,7 @@ adsense = "" # Adsense ID (ID only, without ca-pub-)
 enableSocial = false # Adds OpenGraph and Twitter cards
 homeTitle = "gepulog" # Title for home page
 poweredby = false # Adds powered by hugo and kiss below Copyright
-RSS = true
+RSS = false
 
 [params.opengraph.facebook]
 admins = [] # array of Facebook IDs
@@ -31,7 +31,7 @@ pageID = ""
 twitter = "gepuro"
 github = "gepuro"
 email = ""
-linkedin = ""
+linkedin = "atsushi-hayakawa-a373a86b"
 facebook = "atsushi.hayakawa.0715"
 instagram = ""
 codepen = ""
@@ -44,9 +44,10 @@ tag ="tags"
 hrefTargetBlank = true
 
 [outputs]
-home = ["RSS", "HTML"]
+home = ["HTML"]
+# home = ["RSS", "HTML"]
 
-[outputFormats]
-[outputFormats.RSS]
-mediatype = "application/rss"
-baseName = "feed"
+# [outputFormats]
+# [outputFormats.RSS]
+# mediatype = "application/rss"
+# baseName = "feed"
